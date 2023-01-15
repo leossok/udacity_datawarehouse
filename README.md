@@ -1,5 +1,6 @@
 # Sparkify Data Warehouse
 
+#### [Optional] You can run follow jupyter notebook `dwh.ipynb`
 ## Run
 1. Create `.credential.cfg` file that look like this
     ```
@@ -7,12 +8,11 @@
     KEY=XXXXXXXXXXXXXXXXX
     SECRET=XXXXXXXXXXXXXXXXXXXXXXXX
     ```
-2. [Optional] You can run follow jupyter notebook `.dwh.ipynb`
-3. Create tables
+2. Create tables
    ```
    python3 create_tables.py
    ```
-4. Run ETL pipeline
+3. Run ETL pipeline
    ```
    python3 etl.py
    ```

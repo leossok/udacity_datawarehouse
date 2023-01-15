@@ -6,7 +6,6 @@ config = configparser.ConfigParser()
 config.read("dwh.cfg")
 
 # DROP TABLES
-
 staging_events_table_drop = "DROP TABLE IF EXISTS staging_events;"
 staging_songs_table_drop = "DROP TABLE IF EXISTS staging_songs;"
 songplays_table_drop = "DROP TABLE IF EXISTS songplays;"
@@ -16,7 +15,6 @@ artists_table_drop = "DROP TABLE IF EXISTS artists;"
 time_table_drop = "DROP TABLE IF EXISTS time;"
 
 # CREATE TABLES
-
 staging_events_table_create = """
 CREATE TABLE IF NOT EXISTS staging_events (
 artist text ,
