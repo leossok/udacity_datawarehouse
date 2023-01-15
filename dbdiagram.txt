@@ -1,0 +1,60 @@
+// https://dbdiagram.io/d
+//// -- LEVEL 1
+//// -- Schemas, Tables and References
+
+// Creating tables
+// You can define the tables with full schema names
+Table songplays {
+  songplay_id int [pk]
+  start_time timestamp
+  user_id varchar
+  level varchar
+  song_id varchar
+  artist_id varchar
+  session_id int
+  location varchar
+  user_agent varchar
+}
+
+// If schema name is omitted, it will default to "public" schema.
+Table users as U {
+  user_id varchar [pk]
+  first_name varchar
+  last_name varchar
+  gender varchar
+  level varchar
+}
+// > many-to-one; < one-to-many; - one-to-one; <> many-to-many
+Ref: songplays.user_id > users.user_id
+
+
+Table songs {
+  song_id varchar [pk]
+  title varchar
+  artist_id int
+  year int
+  duration double
+}
+
+Ref: songplays.song_id > songs.song_id
+
+Table artists {
+  artist_id varchar [pk]
+  name varchar
+  location varchar
+  latitude double
+  longitude double
+}
+
+Ref: songplays.artist_id > artists.artist_id
+
+Table time {
+  start_time timestamp [pk]
+  hour int
+  day int
+  week int
+  year int
+  weekday varchar
+}
+
+Ref: songplays.start_time > time.start_time
